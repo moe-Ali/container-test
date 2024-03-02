@@ -1,3 +1,7 @@
 FROM busybox
 
-RUN while true; do echo 'Hello' >> /dev/stderr; sleep 5; done
+RUN mkdir -p /opt/incoming & chmod 777 /opt/incoming
+RUN mkdir -p /opt/outcoming & chmod 777 /opt/outcoming
+RUN touch /opt/outcoming/hello_from_inside_container
+
+ENTRYPOINT ["tail", "-f", "/dev/null"] 
