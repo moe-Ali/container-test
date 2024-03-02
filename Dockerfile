@@ -1,3 +1,3 @@
 FROM busybox
 
-RUN echo "Hello" >> /dev/stderr
+RUN while true; do echo 'Hello' >> /dev/stderr; sleep 5; done
